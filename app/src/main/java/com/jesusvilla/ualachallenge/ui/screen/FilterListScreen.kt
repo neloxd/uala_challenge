@@ -23,50 +23,7 @@ import com.jesusvilla.ualachallenge.R
  * Created by Jesus Villa on 7/12/24.
  */
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun SearchField(
-    searchQuery: String,
-    onQueryChanged: (String) -> Unit,
-    modifier: Modifier = Modifier,
-) {
-    TextField(
-        value = searchQuery,
-        onValueChange = onQueryChanged,
-        modifier = modifier
-            .clip(MaterialTheme.shapes.extraSmall)
-            .indicatorLine(
-                enabled = false,
-                isError = false,
-                interactionSource = remember {
-                    MutableInteractionSource()
-                },
-                colors = TextFieldDefaults.colors(
-                    focusedIndicatorColor = Color.Transparent,
-                    unfocusedIndicatorColor = Color.Transparent,
-                    disabledIndicatorColor = Color.Transparent,
-                ),
-                focusedIndicatorLineThickness = 0.dp,
-                unfocusedIndicatorLineThickness = 0.dp
-            ),
-        placeholder = { Text(text = LocalContext.current.getString(R.string.place_holder_text)) },
-        leadingIcon = {
-            Icon(
-                imageVector = Icons.Rounded.Search,
-                contentDescription = ""
-            )
-        },
-        colors = TextFieldDefaults.colors(
-            focusedContainerColor = Color.White,
-            focusedTextColor = Color.Black,
-            unfocusedContainerColor = Color.White,
-            unfocusedTextColor = Color.Black,
-            focusedIndicatorColor = Color.Transparent,
-            unfocusedIndicatorColor = Color.Transparent,
-            disabledIndicatorColor = Color.Transparent,
-        )
-    )
-}
+
 
 @Composable
 fun filterList() {
