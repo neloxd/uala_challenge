@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -30,11 +33,15 @@ android {
 }
 
 dependencies {
-
+    implementation project(':core')
     implementation libs.androidx.core.ktx
     implementation libs.androidx.appcompat
     implementation libs.material
     testImplementation libs.junit
+    implementation libs.retrofit.rxjava2
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.androidx.espresso.core
+    androidTestImplementation libs.androidx.espresso.core
+    implementation libs.android.dagger.hilt
+    kapt libs.android.dagger.hilt.compiler
 }

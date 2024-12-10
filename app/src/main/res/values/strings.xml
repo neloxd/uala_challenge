@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Uala Challenge</string>
     <string name="MAPS_API_KEY">AIzaSyBx-8URaUz_KE68bIya8FgL9RK-nhvB01w</string>
+
+    <string name="title_back">Back</string>
+    <string name="place_holder_text">filter</string>
 </resources>
