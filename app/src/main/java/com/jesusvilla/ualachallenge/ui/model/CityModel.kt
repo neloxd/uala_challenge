@@ -1,5 +1,8 @@
 package com.jesusvilla.ualachallenge.ui.model
 
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.ui.graphics.Color
 import com.jesusvilla.core.model.City
 
 
@@ -11,7 +14,7 @@ data class CityModel(
     val name: String,
     val id: Int,
     val coordinates: CoordinatesModel,
-    val isSelected: Boolean = false
+    var isSelected: Boolean = false
 )
 
 fun City.mapToCityModel(): CityModel {
