@@ -1,12 +1,13 @@
 [versions]
 agp = "8.1.2"
-kotlin = "1.9.0"
+kotlin = "1.9.25"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 hiltNavigationCompose = "1.2.0"
 hiltCompiler = "2.52"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
+chuckLibrary = "4.0.0"
 lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.9.3"
 composeBom = "2024.04.01"
@@ -42,6 +43,8 @@ maps = "4.3.3"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+chuckLibrary = { module = "com.github.chuckerteam.chucker:library", version.ref = "chuckLibrary" }
+chuckLibrary-no-op = { module = "com.github.chuckerteam.chucker:library-no-op", version.ref = "chuckLibrary" }
 timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timberVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }

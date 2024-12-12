@@ -55,4 +55,6 @@ dependencies {
     implementation libs.okhttp.logging.interceptor
     implementation libs.android.dagger.hilt
     kapt libs.android.dagger.hilt.compiler
+    debugImplementation libs.chuckLibrary
+    releaseImplementation libs.chuckLibrary.no.op
 }

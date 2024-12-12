@@ -1,5 +1,7 @@
 package com.jesusvilla.core.di
 
+import android.content.Context
+import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.jesusvilla.core.BuildConfig
@@ -7,6 +9,7 @@ import com.jesusvilla.core.api.ApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -52,11 +55,13 @@ object NetworkModule {
     @AuthOkHttpClient
     fun provideAuthOkHttpClient(
         @LoggingInterceptor loggingInterceptor: HttpLoggingInterceptor,
-        @HeaderInterceptor headerInterceptor: Interceptor
+        @HeaderInterceptor headerInterceptor: Interceptor,
+        @ApplicationContext applicationContext: Context
     ): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(headerInterceptor)
             .addInterceptor(loggingInterceptor)
+            .addInterceptor(ChuckerInterceptor(applicationContext))
             .build()
     }
 

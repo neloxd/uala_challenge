@@ -1,5 +1,6 @@
 package com.jesusvilla.data.repository
 
+import android.util.Log
 import com.jesusvilla.core.model.City
 import com.jesusvilla.core.model.Resource
 import com.jesusvilla.core.api.ApiService
@@ -17,6 +18,8 @@ class CityRepositoryImpl @Inject constructor(
     @ApiServiceInjection private val apiService: ApiService
 ): CityRepository {
 
+    private val TAG = "CityRepositoryImpl"
+
     override suspend fun searchCities(
         id: String,
         uuid: String,
@@ -28,6 +31,7 @@ class CityRepositoryImpl @Inject constructor(
                 uuid = uuid,
                 resource = resource
             )
+            //Log.i(TAG, "response:$response")
             if (response.isSuccessful) {
                 emit(Resource.Success(response.body() ?: emptyList())) // Emit success state
             } else {

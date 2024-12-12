@@ -6,4 +6,5 @@ package com.jesusvilla.ualachallenge.ui.model
 sealed class CityIntent {
     data object LoadCities : CityIntent()
     data class FilterCities(val query: String): CityIntent()
+    data class NavigateMap(val cityModel: CityModel): CityIntent()
 }

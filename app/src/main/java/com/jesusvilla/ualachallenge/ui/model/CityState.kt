@@ -8,7 +8,7 @@ import com.jesusvilla.core.model.City
 data class CityState (
     val isLoading: Boolean = false,
 
-    val cities: List<City>? = null,
+    val cities: List<CityModel>? = null,
 
     val errorMessage: String? = null
 )
